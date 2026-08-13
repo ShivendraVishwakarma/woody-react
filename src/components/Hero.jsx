@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import project01 from "../assets/images/projects/project-01.jpg";
-import project02 from "../assets/images/projects/project-02.jpg";
-import project03 from "../assets/images/projects/project-03.jpg";
+import project01 from "../assets/images/Projects/project-01.jpg";
+import project02 from "../assets/images/Projects/project-02.jpg";
+import project03 from "../assets/images/Projects/project-03.jpg";
 
 const projects = [
   {

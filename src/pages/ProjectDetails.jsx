@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 
-import project01 from "../assets/images/projects/project-01.jpg";
-import project02 from "../assets/images/projects/project-02.jpg";
-import project03 from "../assets/images/projects/project-03.jpg";
-import project04 from "../assets/images/projects/project-04.jpg";
-import project05 from "../assets/images/projects/project-05.jpg";
+import project01 from "../assets/images/Projects/project-01.jpg";
+import project02 from "../assets/images/Projects/project-02.jpg";
+import project03 from "../assets/images/Projects/project-03.jpg";
+import project04 from "../assets/images/Projects/project-04.jpg";
+import project05 from "../assets/images/Projects/project-05.jpg";
 
 const projects = {
   "01": {
