@@ -1,57 +1,172 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const navClass = ({ isActive }) =>
+    `nav-link${isActive ? " active" : ""}`;
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar${scrolled ? " navbar-scrolled" : ""}`}>
 
-      <Link to="/" className="navbar-logo">
+      {/* Logo */}
+
+      <Link
+        to="/"
+        className="navbar-logo"
+        onClick={closeMenu}
+      >
         WOODY
       </Link>
 
+
+      {/* Desktop Navigation */}
+
       <div className="navbar-links">
-        <Link to="/work">Work</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/studio">Studio</Link>
-        <Link to="/contact">Contact</Link>
+
+        <NavLink
+          to="/projects"
+          className={navClass}
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          to="/services"
+          className={navClass}
+        >
+          Services
+        </NavLink>
+
+        <NavLink
+          to="/studio"
+          className={navClass}
+        >
+          Studio
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className={navClass}
+        >
+          Contact
+        </NavLink>
+
       </div>
 
-      {menuOpen && (
-        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
 
-          <Link to="/work" onClick={() => setMenuOpen(false)}>
-            Work
-          </Link>
+      {/* CTA */}
 
-          <Link to="/services" onClick={() => setMenuOpen(false)}>
-            Services
-          </Link>
+      <Link
+        to="/contact"
+        className="navbar-cta"
+        onClick={closeMenu}
+      >
+        <span>Start a Project</span>
+        <span className="navbar-cta-arrow">↗</span>
+      </Link>
 
-          <Link to="/studio" onClick={() => setMenuOpen(false)}>
-            Studio
-          </Link>
 
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </Link>
-        </div>
-      )}
+      {/* Mobile Toggle */}
 
       <button
+        type="button"
         className="menu-toggle"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((open) => !open)}
+        aria-label={
+          menuOpen
+            ? "Close navigation"
+            : "Open navigation"
+        }
+        aria-expanded={menuOpen}
       >
-        MENU
+        <span>
+          {menuOpen ? "Close" : "Menu"}
+        </span>
       </button>
 
-      <Link to="/contact" className="navbar-cta">
-        Start a project
-      </Link>
+
+      {/* Mobile Navigation */}
+
+      <div
+        className={`mobile-menu${
+          menuOpen ? " mobile-menu-open" : ""
+        }`}
+      >
+
+        <div className="mobile-menu-inner">
+
+          <NavLink
+            to="/projects"
+            className={navClass}
+            onClick={closeMenu}
+          >
+            <span>01</span>
+            Projects
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={navClass}
+            onClick={closeMenu}
+          >
+            <span>02</span>
+            Services
+          </NavLink>
+
+          <NavLink
+            to="/studio"
+            className={navClass}
+            onClick={closeMenu}
+          >
+            <span>03</span>
+            Studio
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={navClass}
+            onClick={closeMenu}
+          >
+            <span>04</span>
+            Contact
+          </NavLink>
+
+        </div>
+
+        <div className="mobile-menu-footer">
+          <span>Interior Architecture & Design</span>
+          <span>New Delhi · India</span>
+        </div>
+
+      </div>
 
     </nav>
   );
