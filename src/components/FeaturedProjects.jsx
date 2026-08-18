@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ArrowLink from "./ArrowLink";
 
 import project01 from "../assets/images/Projects/project-01.jpg";
 import project02 from "../assets/images/Projects/project-02.jpg";
@@ -91,7 +92,6 @@ function FeaturedProjects() {
 
               <span className="editorial-project-view">
                 View project
-                <span>↗</span>
               </span>
 
             </Link>
@@ -141,10 +141,9 @@ function FeaturedProjects() {
           03 Projects
         </span>
 
-        <Link to="/projects">
+        <ArrowLink to="/projects" className="projects-footer-link">
           Explore all work
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </div>
 

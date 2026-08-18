@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import ArrowLink from "../components/ArrowLink";
 
 import project01 from "../assets/images/Projects/project-01.jpg";
 import project02 from "../assets/images/Projects/project-02.jpg";
@@ -69,7 +70,7 @@ function ProjectDetails() {
         <h1>Project not found.</h1>
 
         <Link to="/projects">
-          Back to Projects ↗
+          Back to Projects
         </Link>
       </main>
     );
@@ -197,7 +198,6 @@ function ProjectDetails() {
 
           <div>
             View Project
-            <span>↗</span>
           </div>
 
         </Link>
@@ -209,9 +209,9 @@ function ProjectDetails() {
 
       <div className="project-details-back">
 
-        <Link to="/projects">
-          ← All Projects
-        </Link>
+        <ArrowLink to="/projects" className="project-details-back-link">
+          All Projects
+        </ArrowLink>
 
       </div>
 

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import studioImage from "../assets/images/studio.jpg";
+import ArrowLink from "./ArrowLink";
 
 function StudioAbout() {
   return (
@@ -46,13 +46,12 @@ function StudioAbout() {
             balance of architecture, material, light, and detail.
           </p>
 
-          <Link
+          <ArrowLink
             to="/studio"
             className="studio-about-link"
           >
             About the studio
-            <span>↗</span>
-          </Link>
+          </ArrowLink>
 
         </div>
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ArrowLink from "../components/ArrowLink";
 
 import project01 from "../assets/images/Projects/project-01.jpg";
 import project02 from "../assets/images/Projects/project-02.jpg";
@@ -107,7 +108,6 @@ function Projects() {
 
               <div className="project-card-view">
                 View Project
-                <span>↗</span>
               </div>
 
             </Link>
@@ -141,13 +141,12 @@ function Projects() {
       <div className="projects-page-bottom">
 
         <span>
-          Five spaces · One design language
+          Five spaces / One design language
         </span>
 
-        <Link to="/contact">
+        <ArrowLink to="/contact" className="projects-page-bottom-link">
           Start a Project
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </div>
 

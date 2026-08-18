@@ -48,7 +48,7 @@ function Testimonials() {
         </div>
 
         <span className="testimonials-count">
-          {String(currentIndex + 1).padStart(2, "0")} —{" "}
+          {String(currentIndex + 1).padStart(2, "0")} /{" "}
           {String(testimonials.length).padStart(2, "0")}
         </span>
 
@@ -63,7 +63,7 @@ function Testimonials() {
       >
 
         <div className="testimonial-mark">
-          “
+          "
         </div>
 
         <blockquote>
@@ -75,7 +75,7 @@ function Testimonials() {
           <div>
 
             <span className="testimonial-name">
-              — {testimonial.name}
+              - {testimonial.name}
             </span>
 
             <span className="testimonial-project">
@@ -109,7 +109,7 @@ function Testimonials() {
           aria-label="View next testimonial"
         >
           Next
-          <span>→</span>
+          <span>Next</span>
         </button>
 
       </div>

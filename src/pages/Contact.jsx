@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import ArrowLink from "../components/ArrowLink";
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -92,7 +92,7 @@ function Contact() {
             </span>
 
             <span>
-              {submitted ? "Received" : "01 — 05"}
+              {submitted ? "Received" : "01 / 05"}
             </span>
 
           </div>
@@ -118,7 +118,7 @@ function Contact() {
                 type="button"
                 onClick={() => setSubmitted(false)}
               >
-                Send another inquiry ↗
+                Send another inquiry
               </button>
 
             </div>
@@ -132,7 +132,7 @@ function Contact() {
               onSubmit={handleSubmit}
             >
 
-              {/* 01 — NAME */}
+              {/* 01 - NAME */}
 
               <div className="contact-field">
 
@@ -153,7 +153,7 @@ function Contact() {
               </div>
 
 
-              {/* 02 — EMAIL */}
+              {/* 02 - EMAIL */}
 
               <div className="contact-field">
 
@@ -174,7 +174,7 @@ function Contact() {
               </div>
 
 
-              {/* 03 — PROJECT TYPE */}
+              {/* 03 - PROJECT TYPE */}
 
               <div className="contact-field">
 
@@ -219,7 +219,7 @@ function Contact() {
               </div>
 
 
-              {/* 04 — BUDGET */}
+              {/* 04 - BUDGET */}
 
               <div className="contact-field">
 
@@ -240,19 +240,19 @@ function Contact() {
                   </option>
 
                   <option value="under-25">
-                    Under ₹25 Lakhs
+                    Under Rs. 25 Lakhs
                   </option>
 
                   <option value="25-50">
-                    ₹25–50 Lakhs
+                    Rs. 25-50 Lakhs
                   </option>
 
                   <option value="50-1cr">
-                    ₹50 Lakhs–1 Crore
+                    Rs. 50 Lakhs-1 Crore
                   </option>
 
                   <option value="1cr-plus">
-                    ₹1 Crore+
+                    Rs. 1 Crore+
                   </option>
 
                 </select>
@@ -260,7 +260,7 @@ function Contact() {
               </div>
 
 
-              {/* 05 — MESSAGE */}
+              {/* 05 - MESSAGE */}
 
               <div className="contact-field contact-field-message">
 
@@ -291,7 +291,7 @@ function Contact() {
                   </span>
 
                   <span>
-                    ↗
+                    Send
                   </span>
 
                 </button>
@@ -315,10 +315,9 @@ function Contact() {
           Not ready to start?
         </span>
 
-        <Link to="/projects">
+        <ArrowLink to="/projects" className="contact-explore-link">
           Explore our work
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </div>
 

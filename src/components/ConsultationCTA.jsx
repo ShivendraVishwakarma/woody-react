@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import ArrowLink from "./ArrowLink";
 
 function ConsultationCTA() {
   return (
@@ -22,13 +22,13 @@ function ConsultationCTA() {
           want it to become. Let's start a conversation.
         </p>
 
-        <Link
+        <ArrowLink
           to="/contact"
           className="consultation-cta-link"
+          variant="outline"
         >
           Begin a project
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </div>
 
@@ -39,7 +39,7 @@ function ConsultationCTA() {
         </span>
 
         <span>
-          New Delhi · India
+          New Delhi / India
         </span>
 
       </div>

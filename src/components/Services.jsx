@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import ArrowLink from "./ArrowLink";
 
 const services = [
   {
@@ -79,7 +79,7 @@ function Services() {
               className="service-arrow"
               aria-hidden="true"
             >
-              ↗
+              Explore
             </span>
 
           </article>
@@ -97,10 +97,9 @@ function Services() {
           restraint, and attention to detail.
         </span>
 
-        <Link to="/contact">
+        <ArrowLink to="/contact" className="services-footer-link">
           Start a project
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </div>
 

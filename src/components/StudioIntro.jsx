@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import ArrowLink from "./ArrowLink";
 
 function StudioIntro() {
   return (
@@ -27,13 +27,12 @@ function StudioIntro() {
             people actually live.
           </p>
 
-          <Link
+          <ArrowLink
             to="/studio"
             className="studio-intro-link"
           >
             Discover our studio
-            <span>↗</span>
-          </Link>
+          </ArrowLink>
 
         </div>
 

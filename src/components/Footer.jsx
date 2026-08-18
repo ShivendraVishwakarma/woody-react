@@ -1,129 +1,79 @@
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+
+const footerLinks = [
+  { label: "Projects", path: "/projects" },
+  { label: "Services", path: "/services" },
+  { label: "Studio", path: "/studio" },
+  { label: "Contact", path: "/contact" },
+];
+
+const socialLinks = ["Instagram", "Pinterest", "LinkedIn"];
 
 function Footer() {
   return (
     <footer className="site-footer">
+      <div className="footer-topline">
+        <span>Woody Studio</span>
+        <span>Interior Architecture & Design</span>
+      </div>
 
-      {/* MAIN FOOTER */}
-
-      <div className="footer-main">
-
-        {/* BRAND */}
-
-        <div className="footer-brand">
-
-          <Link
-            to="/"
-            className="footer-logo"
-          >
+      <div className="footer-content">
+        <div className="footer-brand-panel">
+          <Link to="/" className="footer-logo">
             WOODY
           </Link>
 
           <p>
-            Interior architecture
-            <br />
-            & design studio.
+            Creating warm, refined interiors for homes, hospitality spaces, and
+            considered everyday living.
           </p>
-
         </div>
 
+        <div className="footer-cta-panel">
+          <span>Have a space in mind?</span>
+          <h2>Let us shape it with clarity, restraint, and detail.</h2>
 
-        {/* NAVIGATION */}
-
-        <div className="footer-column">
-
-          <span className="footer-column-title">
-            Explore
-          </span>
-
-          <Link to="/projects">
-            Projects
+          <Link to="/contact" className="footer-primary-link">
+            Start a project
+            <ArrowUpRight size={18} strokeWidth={1.7} aria-hidden="true" />
           </Link>
-
-          <Link to="/services">
-            Services
-          </Link>
-
-          <Link to="/studio">
-            Studio
-          </Link>
-
-          <Link to="/contact">
-            Contact
-          </Link>
-
         </div>
 
+        <div className="footer-link-grid">
+          <div>
+            <span className="footer-column-title">Explore</span>
+            {footerLinks.map((item) => (
+              <Link key={item.path} to={item.path}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-        {/* CONTACT */}
+          <div>
+            <span className="footer-column-title">Contact</span>
+            <a href="mailto:hello@woody.studio">hello@woody.studio</a>
+            <span>New Delhi, India</span>
+            <span>Mon - Sat / 10 AM - 6 PM</span>
+          </div>
 
-        <div className="footer-column">
-
-          <span className="footer-column-title">
-            Contact
-          </span>
-
-          <a href="mailto:hello@woody.studio">
-            hello@woody.studio
-          </a>
-
-          <span>
-            New Delhi
-          </span>
-
-          <span>
-            India
-          </span>
-
+          <div>
+            <span className="footer-column-title">Social</span>
+            {socialLinks.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
-
-
-        {/* SOCIAL */}
-
-        <div className="footer-column">
-
-          <span className="footer-column-title">
-            Follow
-          </span>
-
-          <span>
-            Instagram
-          </span>
-
-          <span>
-            LinkedIn
-          </span>
-
-        </div>
-
       </div>
-
-
-      {/* WORDMARK */}
-
-      <div className="footer-wordmark">
-        WOODY
-      </div>
-
-
-      {/* BOTTOM */}
 
       <div className="footer-bottom">
-
-        <span>
-          © 2026 Woody Studio
-        </span>
-
-        <span>
-          Interior Architecture & Design
-        </span>
-
+        <span>(C) 2026 Woody Studio</span>
+        <span>Residential / Hospitality / Styling</span>
         <Link to="/contact">
-          Start a Project ↗
+          Book Consultation
+          <ArrowUpRight size={14} strokeWidth={1.7} aria-hidden="true" />
         </Link>
-
       </div>
-
     </footer>
   );
 }

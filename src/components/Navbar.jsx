@@ -1,5 +1,13 @@
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+
+const navItems = [
+  { label: "Projects", path: "/projects" },
+  { label: "Services", path: "/services" },
+  { label: "Studio", path: "/studio" },
+  { label: "Contact", path: "/contact" },
+];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,140 +42,68 @@ function Navbar() {
     `nav-link${isActive ? " active" : ""}`;
 
   return (
-    <nav className={`navbar${scrolled ? " navbar-scrolled" : ""}`}>
-
-      {/* Logo */}
-
-      <Link
-        to="/"
-        className="navbar-logo"
-        onClick={closeMenu}
-      >
-        WOODY
+    <nav
+      className={`navbar${scrolled ? " navbar-scrolled" : ""}${
+        menuOpen ? " navbar-menu-open" : ""
+      }`}
+    >
+      <Link to="/" className="navbar-logo" onClick={closeMenu}>
+        <span>WOODY</span>
+        <small>Interiors</small>
       </Link>
 
-
-      {/* Desktop Navigation */}
-
-      <div className="navbar-links">
-
-        <NavLink
-          to="/projects"
-          className={navClass}
-        >
-          Projects
-        </NavLink>
-
-        <NavLink
-          to="/services"
-          className={navClass}
-        >
-          Services
-        </NavLink>
-
-        <NavLink
-          to="/studio"
-          className={navClass}
-        >
-          Studio
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={navClass}
-        >
-          Contact
-        </NavLink>
-
+      <div className="navbar-links" aria-label="Primary navigation">
+        {navItems.map((item) => (
+          <NavLink key={item.path} to={item.path} className={navClass}>
+            <span className="nav-link-label">{item.label}</span>
+          </NavLink>
+        ))}
       </div>
 
-
-      {/* CTA */}
-
-      <Link
-        to="/contact"
-        className="navbar-cta"
-        onClick={closeMenu}
-      >
-        <span>Start a Project</span>
-        <span className="navbar-cta-arrow">↗</span>
-      </Link>
-
-
-      {/* Mobile Toggle */}
+      <div className="navbar-actions">
+        <Link to="/contact" className="navbar-cta" onClick={closeMenu}>
+          <span>Book Consultation</span>
+          <span className="navbar-cta-icon">
+            <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
+          </span>
+        </Link>
+      </div>
 
       <button
         type="button"
         className="menu-toggle"
         onClick={() => setMenuOpen((open) => !open)}
-        aria-label={
-          menuOpen
-            ? "Close navigation"
-            : "Open navigation"
-        }
+        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={menuOpen}
       >
-        <span>
-          {menuOpen ? "Close" : "Menu"}
-        </span>
+        {menuOpen ? (
+          <X size={20} strokeWidth={1.7} aria-hidden="true" />
+        ) : (
+          <Menu size={20} strokeWidth={1.7} aria-hidden="true" />
+        )}
+        <span>{menuOpen ? "Close" : "Menu"}</span>
       </button>
 
-
-      {/* Mobile Navigation */}
-
-      <div
-        className={`mobile-menu${
-          menuOpen ? " mobile-menu-open" : ""
-        }`}
-      >
-
+      <div className={`mobile-menu${menuOpen ? " mobile-menu-open" : ""}`}>
         <div className="mobile-menu-inner">
-
-          <NavLink
-            to="/projects"
-            className={navClass}
-            onClick={closeMenu}
-          >
-            <span>01</span>
-            Projects
-          </NavLink>
-
-          <NavLink
-            to="/services"
-            className={navClass}
-            onClick={closeMenu}
-          >
-            <span>02</span>
-            Services
-          </NavLink>
-
-          <NavLink
-            to="/studio"
-            className={navClass}
-            onClick={closeMenu}
-          >
-            <span>03</span>
-            Studio
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={navClass}
-            onClick={closeMenu}
-          >
-            <span>04</span>
-            Contact
-          </NavLink>
-
+          {navItems.map((item, index) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={navClass}
+              onClick={closeMenu}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.label}
+            </NavLink>
+          ))}
         </div>
 
         <div className="mobile-menu-footer">
           <span>Interior Architecture & Design</span>
-          <span>New Delhi · India</span>
+          <span>New Delhi / India</span>
         </div>
-
       </div>
-
     </nav>
   );
 }

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import studioImage from "../assets/images/studio.jpg";
+import ArrowLink from "../components/ArrowLink";
 
 function Studio() {
   return (
@@ -51,7 +51,7 @@ function Studio() {
 
             <p>
               We believe the best interiors don't demand
-              attention. They reveal themselves slowly —
+              attention. They reveal themselves slowly -
               through light falling across a surface,
               the texture of a material, or the way a room
               feels at a particular hour.
@@ -112,7 +112,7 @@ function Studio() {
             <h3>Light</h3>
 
             <p>
-              Natural light is treated as a material —
+              Natural light is treated as a material -
               shaping atmosphere, movement and the
               experience of a room.
             </p>
@@ -245,10 +245,9 @@ function Studio() {
           <em>in mind?</em>
         </h2>
 
-        <Link to="/contact">
+        <ArrowLink to="/contact" className="studio-page-cta-link" variant="outline">
           Start a Project
-          <span>↗</span>
-        </Link>
+        </ArrowLink>
 
       </section>
 
