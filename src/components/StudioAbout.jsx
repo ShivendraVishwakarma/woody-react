@@ -1,5 +1,4 @@
 import studioImage from "../assets/images/studio.jpg";
-import ArrowLink from "./ArrowLink";
 
 function StudioAbout() {
   return (
@@ -48,13 +47,6 @@ function StudioAbout() {
             understand their lifestyle, preferences and requirements before
             developing a design that feels uniquely theirs.
           </p>
-
-          <ArrowLink
-            to="/studio"
-            className="studio-about-link"
-          >
-            Meet the Studio
-          </ArrowLink>
 
         </div>
 

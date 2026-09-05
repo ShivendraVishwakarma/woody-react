@@ -10,11 +10,10 @@ function ProjectDetails() {
   if (!project) {
     return (
       <main className="project-not-found">
+        <span className="project-details-label">404 / Project archive</span>
         <h1>Project not found.</h1>
 
-        <Link to="/projects">
-          Back to Projects
-        </Link>
+        <ArrowLink to="/projects">Back to Projects</ArrowLink>
       </main>
     );
   }

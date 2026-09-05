@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ArrowLink from "./ArrowLink";
 import { featuredProjects } from "../data/projects";
 
 function FeaturedProjects() {
@@ -110,20 +109,6 @@ function FeaturedProjects() {
 
       </div>
 
-
-      {/* FOOTER */}
-
-      <div className="projects-footer">
-
-        <span>
-          03 Projects
-        </span>
-
-        <ArrowLink to="/projects" className="projects-footer-link">
-          View All Projects
-        </ArrowLink>
-
-      </div>
 
     </section>
   );

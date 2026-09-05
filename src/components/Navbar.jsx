@@ -1,20 +1,33 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 
 const navItems = [
   { label: "Projects", path: "/projects" },
   { label: "Services", path: "/services" },
   { label: "Studio", path: "/studio" },
+  { label: "Contact", path: "/contact" },
 ];
 
 function Navbar() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = window.localStorage.getItem("woody-theme");
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
 
   const isImageHeroRoute = pathname === "/" || pathname.startsWith("/projects/");
-  const isOverImageHero = isImageHeroRoute && !scrolled && !menuOpen;
+  const isDarkPage = pathname === "/services";
+  const isOverDarkSurface = (isImageHeroRoute || isDarkPage) && !scrolled && !menuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +50,17 @@ function Navbar() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("woody-theme", theme);
+  }, [theme]);
+
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
   };
 
   const navClass = ({ isActive }) =>
@@ -50,7 +72,7 @@ function Navbar() {
         "navbar",
         scrolled ? "navbar-scrolled" : "",
         menuOpen ? "navbar-menu-open" : "",
-        isOverImageHero ? "navbar-over-hero" : "",
+        isOverDarkSurface ? "navbar-over-hero" : "",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -69,6 +91,21 @@ function Navbar() {
       </div>
 
       <div className="navbar-actions">
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+          aria-pressed={theme === "dark"}
+          title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+        >
+          {theme === "light" ? (
+            <Moon size={16} strokeWidth={1.7} aria-hidden="true" />
+          ) : (
+            <Sun size={16} strokeWidth={1.7} aria-hidden="true" />
+          )}
+        </button>
+
         <Link to="/contact" className="navbar-cta" onClick={closeMenu}>
           <span>Book Consultation</span>
           <span className="navbar-cta-icon">

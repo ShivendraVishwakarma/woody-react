@@ -1,5 +1,3 @@
-import ArrowLink from "./ArrowLink";
-
 function StudioIntro() {
   return (
     <section className="studio-intro">
@@ -23,13 +21,6 @@ function StudioIntro() {
             proportion, light, materials and furniture to create interiors that
             feel cohesive and distinctly yours.
           </p>
-
-          <ArrowLink
-            to="/studio"
-            className="studio-intro-link"
-          >
-            About the Studio
-          </ArrowLink>
 
         </div>
 
