@@ -1,68 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import ArrowLink from "../components/ArrowLink";
-
-import project01 from "../assets/images/Projects/project-01.jpg";
-import project02 from "../assets/images/Projects/project-02.jpg";
-import project03 from "../assets/images/Projects/project-03.jpg";
-import project04 from "../assets/images/Projects/project-04.jpg";
-import project05 from "../assets/images/Projects/project-05.jpg";
-
-const projects = {
-  "01": {
-    title: "Casa Verde",
-    category: "Residential",
-    location: "New Delhi",
-    year: "2026",
-    description:
-      "A warm residential interior shaped around natural light, tactile materials and quiet moments of everyday living.",
-    image: project01,
-  },
-
-  "02": {
-    title: "The Courtyard House",
-    category: "Residential",
-    location: "Gurugram",
-    year: "2026",
-    description:
-      "A contemporary home where architecture, landscape and interior spaces come together through a restrained material palette.",
-    image: project02,
-  },
-
-  "03": {
-    title: "No. 17",
-    category: "Hospitality",
-    location: "Mumbai",
-    year: "2025",
-    description:
-      "An intimate hospitality space designed around atmosphere, proportion and carefully controlled light.",
-    image: project03,
-  },
-
-  "04": {
-    title: "The Quiet Residence",
-    category: "Residential",
-    location: "Bangalore",
-    year: "2025",
-    description:
-      "A calm residential environment built around soft textures, natural materials and understated architectural details.",
-    image: project04,
-  },
-
-  "05": {
-    title: "Material House",
-    category: "Interior",
-    location: "New Delhi",
-    year: "2025",
-    description:
-      "An exploration of material, texture and form where every element has been considered as part of a cohesive interior language.",
-    image: project05,
-  },
-};
+import { getNextProject, getProject } from "../data/projects";
 
 function ProjectDetails() {
   const { id } = useParams();
 
-  const project = projects[id];
+  const project = getProject(id);
 
   if (!project) {
     return (
@@ -76,14 +19,7 @@ function ProjectDetails() {
     );
   }
 
-  const projectNumber = Number(id);
-
-  const nextId =
-    projectNumber === 5
-      ? "01"
-      : String(projectNumber + 1).padStart(2, "0");
-
-  const nextProject = projects[nextId];
+  const nextProject = getNextProject(id);
 
   return (
     <main className="project-details">
@@ -131,7 +67,7 @@ function ProjectDetails() {
 
         <div className="project-details-description">
           <p>
-            {project.description}
+            {project.detail}
           </p>
         </div>
 
@@ -190,7 +126,7 @@ function ProjectDetails() {
 
         <span>Next Project</span>
 
-        <Link to={`/projects/${nextId}`}>
+        <Link to={`/projects/${nextProject.number}`}>
 
           <h2>
             {nextProject.title}

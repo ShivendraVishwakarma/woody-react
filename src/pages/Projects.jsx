@@ -1,54 +1,6 @@
 import { Link } from "react-router-dom";
 import ArrowLink from "../components/ArrowLink";
-
-import project01 from "../assets/images/Projects/project-01.jpg";
-import project02 from "../assets/images/Projects/project-02.jpg";
-import project03 from "../assets/images/Projects/project-03.jpg";
-import project04 from "../assets/images/Projects/project-04.jpg";
-import project05 from "../assets/images/Projects/project-05.jpg";
-
-const projects = [
-  {
-    number: "01",
-    title: "Casa Verde",
-    category: "Residential",
-    location: "New Delhi",
-    year: "2026",
-    image: project01,
-  },
-  {
-    number: "02",
-    title: "The Courtyard House",
-    category: "Residential",
-    location: "Gurugram",
-    year: "2026",
-    image: project02,
-  },
-  {
-    number: "03",
-    title: "No. 17",
-    category: "Hospitality",
-    location: "Mumbai",
-    year: "2025",
-    image: project03,
-  },
-  {
-    number: "04",
-    title: "The Quiet Residence",
-    category: "Residential",
-    location: "Bangalore",
-    year: "2025",
-    image: project04,
-  },
-  {
-    number: "05",
-    title: "Material House",
-    category: "Interior",
-    location: "New Delhi",
-    year: "2025",
-    image: project05,
-  },
-];
+import { projects } from "../data/projects";
 
 function Projects() {
   return (

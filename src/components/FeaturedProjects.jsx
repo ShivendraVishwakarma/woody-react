@@ -1,45 +1,6 @@
 import { Link } from "react-router-dom";
 import ArrowLink from "./ArrowLink";
-
-import project01 from "../assets/images/Projects/project-01.jpg";
-import project02 from "../assets/images/Projects/project-02.jpg";
-import project03 from "../assets/images/Projects/project-03.jpg";
-
-const projects = [
-  {
-    image: project01,
-    number: "01",
-    category: "Residential",
-    location: "New Delhi",
-    title: "Casa Verde",
-    year: "2026",
-    type: "Private Residence",
-    description:
-      "A warm contemporary residence designed around natural materials, soft textures and generous living spaces.",
-  },
-  {
-    image: project02,
-    number: "02",
-    category: "Residential",
-    location: "Gurugram",
-    title: "The Courtyard House",
-    year: "2026",
-    type: "Private Residence",
-    description:
-      "A calm, light-filled home where considered planning and natural materials create a strong connection between indoor and outdoor spaces.",
-  },
-  {
-    image: project03,
-    number: "03",
-    category: "Hospitality",
-    location: "Mumbai",
-    title: "No. 17",
-    year: "2025",
-    type: "Urban Residence",
-    description:
-      "A refined residential interior balancing clean architectural lines with warm materials and comfortable everyday living.",
-  },
-];
+import { featuredProjects } from "../data/projects";
 
 function FeaturedProjects() {
   return (
@@ -72,7 +33,7 @@ function FeaturedProjects() {
 
       <div className="projects-editorial">
 
-        {projects.map((project, index) => (
+        {featuredProjects.map((project, index) => (
           <article
             className={`editorial-project editorial-project-${index + 1}`}
             key={project.number}
