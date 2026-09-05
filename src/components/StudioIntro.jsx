@@ -12,26 +12,23 @@ function StudioIntro() {
       <div className="studio-intro-content">
 
         <h2>
-          We create interiors
-          <br />
-          that feel considered,
-          <br />
-          timeless, and personal.
+          We create interiors that feel personal, refined, and effortless.
         </h2>
 
         <div className="studio-intro-bottom">
 
           <p>
-            From the first sketch to the final detail, we design spaces
-            that balance architecture, material, light, and the way
-            people actually live.
+            Every space begins with understanding how you live. From the
+            overall layout to the smallest detail, we bring together
+            proportion, light, materials and furniture to create interiors that
+            feel cohesive and distinctly yours.
           </p>
 
           <ArrowLink
             to="/studio"
             className="studio-intro-link"
           >
-            Discover our studio
+            About the Studio
           </ArrowLink>
 
         </div>

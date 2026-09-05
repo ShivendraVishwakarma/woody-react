@@ -240,19 +240,19 @@ function Contact() {
                   </option>
 
                   <option value="under-25">
-                    Under Rs. 25 Lakhs
+                    Under INR 25 Lakhs
                   </option>
 
                   <option value="25-50">
-                    Rs. 25-50 Lakhs
+                    INR 25-50 Lakhs
                   </option>
 
                   <option value="50-1cr">
-                    Rs. 50 Lakhs-1 Crore
+                    INR 50 Lakhs-1 Crore
                   </option>
 
                   <option value="1cr-plus">
-                    Rs. 1 Crore+
+                    INR 1 Crore+
                   </option>
 
                 </select>

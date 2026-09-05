@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
@@ -6,12 +6,15 @@ const navItems = [
   { label: "Projects", path: "/projects" },
   { label: "Services", path: "/services" },
   { label: "Studio", path: "/studio" },
-  { label: "Contact", path: "/contact" },
 ];
 
 function Navbar() {
+  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isImageHeroRoute = pathname === "/" || pathname.startsWith("/projects/");
+  const isOverImageHero = isImageHeroRoute && !scrolled && !menuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,9 +46,14 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar${scrolled ? " navbar-scrolled" : ""}${
-        menuOpen ? " navbar-menu-open" : ""
-      }`}
+      className={[
+        "navbar",
+        scrolled ? "navbar-scrolled" : "",
+        menuOpen ? "navbar-menu-open" : "",
+        isOverImageHero ? "navbar-over-hero" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <Link to="/" className="navbar-logo" onClick={closeMenu}>
         <span>WOODY</span>
@@ -97,6 +105,11 @@ function Navbar() {
               {item.label}
             </NavLink>
           ))}
+
+          <Link to="/contact" className="mobile-menu-cta" onClick={closeMenu}>
+            Start a Project
+            <ArrowUpRight size={18} strokeWidth={1.7} aria-hidden="true" />
+          </Link>
         </div>
 
         <div className="mobile-menu-footer">

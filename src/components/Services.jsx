@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ArrowLink from "./ArrowLink";
 
 const services = [
@@ -5,25 +6,25 @@ const services = [
     number: "01",
     title: "Interior Design",
     description:
-      "Complete interior direction from initial concept through to the final detail.",
+      "Complete interior design solutions tailored to your lifestyle, space and aesthetic.",
   },
   {
     number: "02",
     title: "Space Planning",
     description:
-      "Thoughtful layouts that balance movement, proportion, function, and atmosphere.",
+      "Layouts developed around movement, functionality, natural light and everyday living.",
   },
   {
     number: "03",
-    title: "Material & Styling",
+    title: "Material Selection & Styling",
     description:
-      "A considered selection of materials, finishes, furniture, lighting, and objects.",
+      "A carefully selected palette of materials, furniture, lighting and finishes that brings the design together.",
   },
   {
     number: "04",
     title: "Design Consultation",
     description:
-      "Focused design guidance for projects that need clarity, direction, or refinement.",
+      "Focused design guidance for clients who need direction, refinement or solutions for a specific space.",
   },
 ];
 
@@ -37,14 +38,20 @@ function Services() {
 
         <div className="services-label">
           <span>03</span>
-          <span>Expertise</span>
+          <span>What We Do</span>
         </div>
 
-        <h2>
-          Thoughtful design,
-          <br />
-          <em>from concept to completion.</em>
-        </h2>
+        <div className="services-heading-copy">
+          <h2>
+            From the first idea to the final detail.
+          </h2>
+
+          <p>
+            We provide a complete interior design service, creating considered
+            spaces from initial concept through design development and
+            execution.
+          </p>
+        </div>
 
       </div>
 
@@ -54,7 +61,8 @@ function Services() {
       <div className="services-list">
 
         {services.map((service) => (
-          <article
+          <Link
+            to="/contact"
             className="service-item"
             key={service.number}
           >
@@ -82,7 +90,7 @@ function Services() {
               Explore
             </span>
 
-          </article>
+          </Link>
         ))}
 
       </div>

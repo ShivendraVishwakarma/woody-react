@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
   { label: "Projects", path: "/projects" },
@@ -14,7 +13,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-topline">
-        <span>Woody Studio</span>
+        <span>Woody</span>
         <span>Interior Architecture & Design</span>
       </div>
 
@@ -25,24 +24,14 @@ function Footer() {
           </Link>
 
           <p>
-            Creating warm, refined interiors for homes, hospitality spaces, and
-            considered everyday living.
+            Creating warm, refined residential interiors shaped around
+            functionality, materiality, and considered everyday living.
           </p>
-        </div>
-
-        <div className="footer-cta-panel">
-          <span>Have a space in mind?</span>
-          <h2>Let us shape it with clarity, restraint, and detail.</h2>
-
-          <Link to="/contact" className="footer-primary-link">
-            Start a project
-            <ArrowUpRight size={18} strokeWidth={1.7} aria-hidden="true" />
-          </Link>
         </div>
 
         <div className="footer-link-grid">
           <div>
-            <span className="footer-column-title">Explore</span>
+            <span className="footer-column-title">Navigation</span>
             {footerLinks.map((item) => (
               <Link key={item.path} to={item.path}>
                 {item.label}
@@ -67,12 +56,9 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>(C) 2026 Woody Studio</span>
-        <span>Residential / Hospitality / Styling</span>
-        <Link to="/contact">
-          Book Consultation
-          <ArrowUpRight size={14} strokeWidth={1.7} aria-hidden="true" />
-        </Link>
+        <span>&copy; 2026 Woody Studio</span>
+        <span>Residential Interiors</span>
+        <Link to="/contact">Start a Project</Link>
       </div>
     </footer>
   );

@@ -5,6 +5,10 @@ import Services from "../components/Services";
 import StudioAbout from "../components/StudioAbout";
 import Testimonials from "../components/Testimonials";
 import ConsultationCTA from "../components/ConsultationCTA";
+import {
+  HomepagePhilosophy,
+  HomepageProcess,
+} from "../components/PhilosophyProcess";
 
 function Home() {
   return (
@@ -17,7 +21,11 @@ function Home() {
 
       <Services />
 
+      <HomepagePhilosophy />
+
       <StudioAbout />
+
+      <HomepageProcess />
 
       <Testimonials />
 

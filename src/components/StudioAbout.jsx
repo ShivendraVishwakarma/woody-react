@@ -27,30 +27,33 @@ function StudioAbout() {
       <div className="studio-about-content">
 
         <div className="studio-about-label">
-          <span>04</span>
-          <span>The Studio</span>
+          <span>05</span>
+          <span>About the Studio</span>
         </div>
 
 
         <div className="studio-about-main">
 
           <h2>
-            Designing spaces
-            <br />
-            <em>with intention.</em>
+            A design studio focused on how spaces are lived in.
           </h2>
 
           <p>
-            We create interiors that feel considered, personal,
-            and timeless. Every space is shaped through a careful
-            balance of architecture, material, light, and detail.
+            Woody is an interior design studio creating residential spaces with
+            a focus on functionality, materiality and timeless aesthetics.
+          </p>
+
+          <p>
+            From new homes to renovations, we work closely with our clients to
+            understand their lifestyle, preferences and requirements before
+            developing a design that feels uniquely theirs.
           </p>
 
           <ArrowLink
             to="/studio"
             className="studio-about-link"
           >
-            About the studio
+            Meet the Studio
           </ArrowLink>
 
         </div>

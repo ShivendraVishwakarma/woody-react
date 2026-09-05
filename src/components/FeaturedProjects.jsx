@@ -13,6 +13,9 @@ const projects = [
     location: "New Delhi",
     title: "Casa Verde",
     year: "2026",
+    type: "Private Residence",
+    description:
+      "A warm contemporary residence designed around natural materials, soft textures and generous living spaces.",
   },
   {
     image: project02,
@@ -21,6 +24,9 @@ const projects = [
     location: "Gurugram",
     title: "The Courtyard House",
     year: "2026",
+    type: "Private Residence",
+    description:
+      "A calm, light-filled home where considered planning and natural materials create a strong connection between indoor and outdoor spaces.",
   },
   {
     image: project03,
@@ -29,6 +35,9 @@ const projects = [
     location: "Mumbai",
     title: "No. 17",
     year: "2025",
+    type: "Urban Residence",
+    description:
+      "A refined residential interior balancing clean architectural lines with warm materials and comfortable everyday living.",
   },
 ];
 
@@ -43,20 +52,17 @@ function FeaturedProjects() {
         <div className="projects-heading-top">
           <span className="section-number">02</span>
           <span className="section-label">
-            Selected Work
+            Selected Projects
           </span>
         </div>
 
         <h2>
-          Spaces shaped by
-          <br />
-          <em>light, material & intention.</em>
+          Selected interiors shaped with light, material, and care.
         </h2>
 
         <p>
-          A curated selection of residences and spaces
-          created through a considered balance of architecture,
-          atmosphere, and detail.
+          A concise view of recent residential projects, each shaped around
+          everyday use, material warmth, and a clear design language.
         </p>
 
       </header>
@@ -104,24 +110,35 @@ function FeaturedProjects() {
               <div className="editorial-project-title-wrap">
 
                 <span className="editorial-project-category">
-                  {project.category}
+                  {project.type} / {project.location}
                 </span>
 
                 <h3>
                   {project.title}
                 </h3>
 
+                <p>
+                  {project.description}
+                </p>
+
               </div>
 
               <div className="editorial-project-meta">
 
                 <span>
-                  {project.location}
+                  {project.category}
                 </span>
 
                 <span>
                   {project.year}
                 </span>
+
+                <Link
+                  to={`/projects/${project.number}`}
+                  className="editorial-project-cta"
+                >
+                  View Project
+                </Link>
 
               </div>
 
@@ -142,7 +159,7 @@ function FeaturedProjects() {
         </span>
 
         <ArrowLink to="/projects" className="projects-footer-link">
-          Explore all work
+          View All Projects
         </ArrowLink>
 
       </div>

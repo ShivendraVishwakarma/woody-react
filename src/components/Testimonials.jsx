@@ -1,40 +1,4 @@
-import { useState } from "react";
-
-const testimonials = [
-  {
-    quote:
-      "The space feels like it was designed specifically for us. Every detail feels intentional without ever feeling overdone.",
-    name: "Aarav & Meera",
-    project: "Private Residence",
-    location: "New Delhi",
-  },
-  {
-    quote:
-      "Woody understood how we wanted the home to feel before we even knew how to describe it. The result is calm, warm, and completely ours.",
-    name: "Rohan Kapoor",
-    project: "Contemporary Residence",
-    location: "Mumbai",
-  },
-  {
-    quote:
-      "From the first concept to the final styling, the entire process felt considered. The finished space exceeded what we imagined.",
-    name: "Ananya Sharma",
-    project: "Minimal Residence",
-    location: "Bangalore",
-  },
-];
-
 function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const testimonial = testimonials[currentIndex];
-
-  const nextTestimonial = () => {
-    setCurrentIndex(
-      (current) => (current + 1) % testimonials.length
-    );
-  };
-
   return (
     <section className="testimonials">
 
@@ -43,13 +7,12 @@ function Testimonials() {
       <div className="testimonials-header">
 
         <div className="testimonials-label">
-          <span>05</span>
-          <span>Client Notes</span>
+          <span>07</span>
+          <span>Client Stories</span>
         </div>
 
         <span className="testimonials-count">
-          {String(currentIndex + 1).padStart(2, "0")} /{" "}
-          {String(testimonials.length).padStart(2, "0")}
+          01 / 01
         </span>
 
       </div>
@@ -59,7 +22,6 @@ function Testimonials() {
 
       <div
         className="testimonial-content"
-        key={currentIndex}
       >
 
         <div className="testimonial-mark">
@@ -67,7 +29,9 @@ function Testimonials() {
         </div>
 
         <blockquote>
-          {testimonial.quote}
+          The team understood how we wanted to live and translated that into a
+          home that feels completely ours. Every detail feels intentional
+          without ever feeling overdone.
         </blockquote>
 
         <div className="testimonial-details">
@@ -75,18 +39,16 @@ function Testimonials() {
           <div>
 
             <span className="testimonial-name">
-              - {testimonial.name}
+              - Client
             </span>
 
             <span className="testimonial-project">
-              {testimonial.project}
+              Private Residence
             </span>
 
           </div>
 
-          <span className="testimonial-location">
-            {testimonial.location}
-          </span>
+          <span className="testimonial-location">Residential Interior</span>
 
         </div>
 
@@ -102,15 +64,7 @@ function Testimonials() {
           we have had the pleasure of designing for.
         </span>
 
-        <button
-          type="button"
-          className="testimonial-next"
-          onClick={nextTestimonial}
-          aria-label="View next testimonial"
-        >
-          Next
-          <span>Next</span>
-        </button>
+        <span className="testimonial-note">Intentional / Personal / Refined</span>
 
       </div>
 
