@@ -127,7 +127,7 @@ p {
 .home-process-label,
 .testimonial-note {
   color: var(--ink-faint);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.18em;
   line-height: 1.45;
@@ -139,16 +139,17 @@ p {
 .project-details-title h1,
 .studio-page-heading h1 {
   font-family: var(--serif);
-  font-size: 112px;
+  font-size: 84px;
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 0.84;
+  line-height: 0.9;
   text-wrap: balance;
 }
 
 .studio-intro-content h2,
 .projects-heading h2,
 .services-header h2,
+.services-header h1,
 .studio-about-main h2,
 .home-philosophy-content h2,
 .home-process-header h2,
@@ -162,10 +163,10 @@ p {
 .contact-intro-main h1,
 .contact-success h2 {
   font-family: var(--serif);
-  font-size: 72px;
+  font-size: 52px;
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 0.92;
+  line-height: 0.98;
   text-wrap: balance;
 }
 
@@ -176,10 +177,10 @@ p {
 .studio-philosophy-list h3,
 .studio-approach-list h3 {
   font-family: var(--serif);
-  font-size: 44px;
+  font-size: 32px;
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 0.96;
+  line-height: 1;
   text-wrap: balance;
 }
 
@@ -715,6 +716,7 @@ p {
 
 .projects-heading h2,
 .projects-heading p,
+.services-heading-copy h1,
 .services-heading-copy {
   grid-column: 2;
 }
@@ -746,6 +748,8 @@ p {
 
 .editorial-project-image,
 .project-card-image {
+  display: block;
+  width: 100%;
   aspect-ratio: 4 / 5;
   color: var(--light);
 }
@@ -827,6 +831,11 @@ p {
 .editorial-project {
   min-width: 0;
   align-self: start;
+}
+
+.editorial-project-info {
+  min-height: 196px;
+  grid-template-rows: 1fr auto;
 }
 
 .project-card-info {
@@ -978,8 +987,8 @@ p {
 }
 
 .studio-about-image-wrap {
-  height: min(64vh, 680px);
-  min-height: 420px;
+  height: min(55vh, 600px);
+  min-height: 360px;
 }
 
 .studio-about-image-label,
@@ -1151,7 +1160,7 @@ p {
 
 .project-details-description p {
   font-family: var(--serif);
-  font-size: 48px;
+  font-size: 36px;
   letter-spacing: 0;
   line-height: 1.08;
 }
@@ -1175,7 +1184,7 @@ p {
 }
 
 .project-details-large-image {
-  height: min(78vh, 780px);
+  height: min(60vh, 640px);
 }
 
 .project-details-statement {
@@ -1207,7 +1216,7 @@ p {
 
 .project-not-found h1 {
   font-family: var(--serif);
-  font-size: 96px;
+  font-size: 72px;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -1229,7 +1238,7 @@ p {
 }
 
 .studio-page-image {
-  height: min(82vh, 820px);
+  height: min(60vh, 640px);
 }
 
 .studio-philosophy {
@@ -1341,7 +1350,7 @@ p {
   display: flex;
   gap: 10px;
   color: var(--ink-faint);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1429,7 +1438,7 @@ p {
 
 .footer-logo {
   font-family: var(--serif);
-  font-size: 72px;
+  font-size: 56px;
   letter-spacing: 0;
   line-height: 0.9;
 }
@@ -1584,7 +1593,7 @@ p {
     display: flex;
     gap: 18px;
     font-family: var(--serif);
-    font-size: 64px;
+    font-size: 52px;
     letter-spacing: 0;
     line-height: 0.95;
   }
@@ -1626,7 +1635,7 @@ p {
   .projects-page-heading h1,
   .project-details-title h1,
   .studio-page-heading h1 {
-    font-size: 58px;
+    font-size: 44px;
     letter-spacing: 0;
   }
 
@@ -1645,7 +1654,7 @@ p {
   .studio-page-cta h2,
   .contact-intro-main h1,
   .contact-success h2 {
-    font-size: 50px;
+    font-size: 38px;
   }
 
   .editorial-project-info,
@@ -1654,15 +1663,15 @@ p {
   }
 
   .project-details-description p {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .project-not-found h1 {
-    font-size: 58px;
+    font-size: 44px;
   }
 
   .footer-logo {
-    font-size: 56px;
+    font-size: 44px;
   }
 
   .studio-intro-bottom,

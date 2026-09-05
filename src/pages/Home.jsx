@@ -12,7 +12,7 @@ import {
 
 function Home() {
   return (
-    <>
+    <main className="home-page">
       <Hero />
 
       <StudioIntro />
@@ -30,7 +30,7 @@ function Home() {
       <Testimonials />
 
       <ConsultationCTA />
-    </>
+    </main>
   );
 }
 

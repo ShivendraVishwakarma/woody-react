@@ -1,6 +1,8 @@
+import ArrowLink from "./ArrowLink";
+
 function StudioIntro() {
   return (
-    <section className="studio-intro">
+    <section id="approach" className="studio-intro">
 
       <div className="studio-intro-label">
         <span>01</span>
@@ -10,17 +12,19 @@ function StudioIntro() {
       <div className="studio-intro-content">
 
         <h2>
-          We create interiors that feel personal, refined, and effortless.
+          Interior design for homes that work beautifully.
         </h2>
 
         <div className="studio-intro-bottom">
 
           <p>
-            Every space begins with understanding how you live. From the
-            overall layout to the smallest detail, we bring together
-            proportion, light, materials and furniture to create interiors that
-            feel cohesive and distinctly yours.
+            Woody is a New Delhi interior design studio creating residential
+            spaces through planning, materials, furniture and detail. We start
+            with how your home needs to work, then shape every decision around
+            the way you live.
           </p>
+
+          <ArrowLink to="/studio">About the Studio</ArrowLink>
 
         </div>
 

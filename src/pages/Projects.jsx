@@ -93,7 +93,7 @@ function Projects() {
       <div className="projects-page-bottom">
 
         <span>
-          Five spaces / One design language
+          Nine spaces / One design language
         </span>
 
         <ArrowLink to="/contact" className="projects-page-bottom-link">

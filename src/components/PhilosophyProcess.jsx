@@ -3,44 +3,43 @@ const processSteps = [
     number: "01",
     title: "Discover",
     description:
-      "Understanding the people, place and possibilities behind every project.",
+      "We understand your home, routine, budget and project goals before we draw a line.",
   },
   {
     number: "02",
     title: "Concept",
     description:
-      "Translating ideas into a clear visual and spatial direction.",
+      "We establish the layout, mood, materials and priorities that guide the project.",
   },
   {
     number: "03",
     title: "Develop",
     description:
-      "Developing materials, details, furniture and architecture into one language.",
+      "We develop drawings, furniture, lighting and specifications ready for execution.",
   },
   {
     number: "04",
     title: "Deliver",
     description:
-      "Working closely through execution to make sure the original idea survives every detail.",
+      "We coordinate the final stages so the finished home matches the design direction.",
   },
 ];
 
 export function HomepagePhilosophy() {
   return (
-    <section className="home-philosophy">
+    <section id="philosophy" className="home-philosophy">
       <div className="home-philosophy-label">
         <span>04</span>
         <span>Our Philosophy</span>
       </div>
 
       <div className="home-philosophy-content">
-        <h2>Good design should feel natural.</h2>
+        <h2>Beautiful spaces should work beautifully.</h2>
 
         <p>
-          We believe the best interiors don't simply look beautiful; they work
-          beautifully. Our approach combines thoughtful planning, honest
-          materials and restrained detailing to create spaces that remain
-          relevant long after the first impression.
+          We begin with the practical questions: how people move, store,
+          gather and rest. The result is a home that feels calm because the
+          planning, materials and details are doing their job.
         </p>
       </div>
     </section>
@@ -49,14 +48,14 @@ export function HomepagePhilosophy() {
 
 export function HomepageProcess() {
   return (
-    <section className="home-process">
+    <section id="process" className="home-process">
       <div className="home-process-header">
         <div className="home-process-label">
           <span>06</span>
           <span>Our Process</span>
         </div>
 
-        <h2>A clear process. A considered result.</h2>
+        <h2>From first brief to final installation.</h2>
       </div>
 
       <div className="home-process-list">

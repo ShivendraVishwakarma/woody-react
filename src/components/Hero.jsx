@@ -39,7 +39,11 @@ function Hero() {
   };
 
   return (
-    <section className="hero" aria-label="Woody interior design studio">
+    <section
+      id="hero"
+      className="hero"
+      aria-label="Woody interior design studio"
+    >
       <div className="hero-image-wrapper">
         {heroSlides.map((slide, index) => (
           <img
@@ -62,9 +66,8 @@ function Hero() {
         </h1>
 
         <p className="hero-description">
-          We create thoughtful residential interiors that balance
-          functionality, natural materials and timeless design, shaped around
-          the people who live in them.
+          We design and deliver residential interiors across Delhi NCR, from
+          the first space plan through materials, furniture and final styling.
         </p>
 
         <div className="hero-actions">

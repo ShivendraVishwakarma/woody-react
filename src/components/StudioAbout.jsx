@@ -2,7 +2,7 @@ import studioImage from "../assets/images/studio.jpg";
 
 function StudioAbout() {
   return (
-    <section className="studio-about">
+    <section id="studio" className="studio-about">
 
       {/* IMAGE */}
 

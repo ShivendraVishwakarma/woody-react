@@ -3,7 +3,7 @@ import { featuredProjects } from "../data/projects";
 
 function FeaturedProjects() {
   return (
-    <section className="featured-projects">
+    <section id="projects" className="featured-projects">
 
       {/* HEADER */}
 
@@ -17,12 +17,12 @@ function FeaturedProjects() {
         </div>
 
         <h2>
-          Selected interiors shaped with light, material, and care.
+          Residential interiors planned for real life.
         </h2>
 
         <p>
-          A concise view of recent residential projects, each shaped around
-          everyday use, material warmth, and a clear design language.
+          A selection of homes where space planning, materials and everyday use
+          come together in one clear design direction.
         </p>
 
       </header>

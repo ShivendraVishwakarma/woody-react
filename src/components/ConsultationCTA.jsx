@@ -2,7 +2,7 @@ import ArrowLink from "./ArrowLink";
 
 function ConsultationCTA() {
   return (
-    <section className="consultation-cta">
+    <section id="contact" className="consultation-cta">
 
       <div className="consultation-cta-top">
         <span>08</span>
@@ -12,13 +12,12 @@ function ConsultationCTA() {
       <div className="consultation-cta-content">
 
         <h2>
-          Planning a new space? Let's create something that feels like yours.
+          Planning a new space? Let's make it work beautifully.
         </h2>
 
         <p>
-          Whether you're building a new home, renovating an existing space or
-          simply looking for the right design direction, we'd love to hear
-          about your project.
+          Tell us whether you are building, renovating or ready to make better
+          use of your home. We will help you find the right next step.
         </p>
 
         <div className="consultation-cta-actions">

@@ -11,7 +11,7 @@ const socialLinks = ["Instagram", "Pinterest", "LinkedIn"];
 
 function Footer() {
   return (
-    <footer className="site-footer">
+    <footer id="footer" className="site-footer">
       <div className="footer-topline">
         <span>Woody</span>
         <span>Interior Architecture & Design</span>
@@ -24,8 +24,8 @@ function Footer() {
           </Link>
 
           <p>
-            Creating warm, refined residential interiors shaped around
-            functionality, materiality, and considered everyday living.
+            Woody is a New Delhi interior design studio creating residential
+            spaces through clear planning, honest materials and careful detail.
           </p>
         </div>
 

@@ -28,9 +28,9 @@ const services = [
   },
 ];
 
-function Services() {
+function Services({ page = false }) {
   return (
-    <section className="services">
+    <section id="services" className="services">
 
       {/* HEADER */}
 
@@ -42,9 +42,15 @@ function Services() {
         </div>
 
         <div className="services-heading-copy">
-          <h2>
-            From the first idea to the final detail.
-          </h2>
+          {page ? (
+            <h1>
+              From the first idea to the final detail.
+            </h1>
+          ) : (
+            <h2>
+              From the first idea to the final detail.
+            </h2>
+          )}
 
           <p>
             We provide a complete interior design service, creating considered

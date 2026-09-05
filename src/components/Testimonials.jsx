@@ -1,6 +1,6 @@
 function Testimonials() {
   return (
-    <section className="testimonials">
+    <section id="testimonials" className="testimonials">
 
       {/* HEADER */}
 
